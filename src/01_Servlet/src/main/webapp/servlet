@@ -1,0 +1,28 @@
+HTML : 웹 사이트 제작 기능
+-----------------디자인, 기능적 한계
+HTML : 뼈대
+CSS : 디자인
+JavaScript : 기능, 이벤트
+-----------------프로그래밍 언어 java
+
+Servlet (server + applet(application)) -> Java Program
+
+사용자 요청을 하면 HTML + css + js를 만들어내는 프로그램
+단순 web server에서는 실행이 안된다.
+WAS에서 실행해야한다. (infinity free는 was 급이 안됨)
+but WAS는 공짜가 없다. (카페 24 등등)
+
+Web Application Server
+내 컴퓨터를 WAS로 만들자.
+
+node.js
+django
+..
+tomcat
+
+톰캣 WAS : 8080
+
+IT 바닥의 약속
+웹서비스 : 80
+
+localhost: 80

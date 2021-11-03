@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Servlet Practice</title>
+<style>
+	h1 {
+	color : tomato;
+	}
+</style>
+</head>
+<body>
+	<h1>Stay Awhile and Listen</h1>
+	처음 한번만 실행(서버 실행)<br>
+	소스 수정 - 저장 - 브라우저에서 새로고침 (VSC네?)<br>
+	------------------------<br>
+	톰캣이 버그가 있을때(안될때)<br>
+	1. 실행 다시<br>
+	2. 브라우저의 캐시 비우고 새로고침 => Ctrl + Shift + r<br>
+	3. 서버 우클릭 clean 실시한 다음 restart<br>
+	4. Tomcat에 실려있는 프로젝트 지우고 실행 다시<br>
+	5. Tomcat 다시 잡기<br>
+	6. 재부팅<br>
+	-----------------------<br>
+	already using port<br>
+	
+	<h4>1.</h4><br>
+	cmd<br>
+	netstat -o -a -n -p tcp<br>
+	taskkill -f /pid 포트를사용하는 pid 번호<br>
+	<h4>2.</h4><br>
+	재부팅
+	
+</body>
+</html>
