@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body{
+	background-color: ivory;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	
+	box-shadow: 5px 5px 5px black;
+	width: 400px;
+	height: 600px;
+	background-color: gray;
+	color: white;
+}
+
+td {
+	font-size: 20px;
+	font-weight: 800;
+	text-align: center;
+}
+
+button {
+	width: 150px;
+	height: 40px;
+	font-size: 15pt;
+	color: black;
+	border-color: black;
+}
+
+textarea{
+	resize: none;
+	height : 100px;
+	width: 200px;
+	font-size: 13px;
+	outline-color: black;
+}
+
+input {
+	padding: 10px;
+	border-radius: 15px;
+}
