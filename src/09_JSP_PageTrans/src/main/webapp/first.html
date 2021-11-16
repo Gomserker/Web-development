@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function go(){
+		location.href='second.jsp?a=5&b=10';
+	}
+</script>
+<body>
+<!-- 
+
+	request
+	1. <a> 클릭 - get 요청 발생.
+	2. <form> 속에 <button> 클릭 - get, post
+		사용자의 입력들을 편하게 받을 수 있음
+	3. JavaScript(클릭, onclick) - get 요청 발생
+ -->
+<a href="second.jsp?a=10&b=20">calculate 10 + 20</a>
+<hr>
+<form action="second.jsp">
+	a <input name="a"><p>
+	b <input name="b"><p>
+	<button>calculate</button>
+</form>
+<hr>
+<h2 onclick="go();">calculate 5 + 10</h2>
+</body>
+</html>
