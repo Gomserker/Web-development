@@ -1,0 +1,29 @@
+package com.bg.mb;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class DAO {
+
+	public static void getAllProduct(HttpServletRequest request) {
+		
+		try {
+			SqlSession ss = DBManager_new.connect();
+			
+			List<Product> products = ss.selectList("bgqqq.getAllProduct");
+			
+			for (Product c : products) {
+				System.out.println(c.getP_name());
+				System.out.println(c.getP_price());
+				System.out.println("--------------");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

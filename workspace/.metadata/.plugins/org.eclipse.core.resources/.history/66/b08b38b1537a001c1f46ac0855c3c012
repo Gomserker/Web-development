@@ -1,0 +1,26 @@
+package com.bg.mb;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class MMain2 {
+	public static void main(String[] args) {
+		
+		//콘솔에 db 정보 전부 출력
+		
+		try {
+			SqlSession ss = DBManager_new.connect();
+			
+			List<Weather> weathers = ss.selectList("bgqqq.getAllWeather");
+			
+			
+			for (Weather w : weathers) {
+				System.out.println(w);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

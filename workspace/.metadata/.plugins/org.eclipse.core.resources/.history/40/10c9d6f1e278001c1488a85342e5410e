@@ -1,0 +1,46 @@
+package com.bg.mb;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class UpdateMain2 {
+	public static void main(String[] args) {
+		try {
+			String resource = "config.xml";
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+			SqlSession ss = sqlSessionFactory.openSession();
+			
+			System.out.println("success");
+			
+			// 등록(insert)
+			
+			Scanner k = new Scanner(System.in);
+			System.out.println("--커피 가격 수정");
+			System.out.print("수정할 가격: ");
+			int price = k.nextInt();
+			
+			Coffee c = new Coffee();
+			c.setC_price(price);
+			
+			System.out.print("얼마로 수정?: ");
+			int updatePrice = k.nextInt();
+			c.setC_price(updatePrice);
+			
+			
+			if(ss.update("bgqqq.updatePrice") == 1) {
+				System.out.println("price updated");
+				ss.commit();
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

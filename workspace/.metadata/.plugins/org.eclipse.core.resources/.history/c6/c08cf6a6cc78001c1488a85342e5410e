@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bgqqq">
+
+	<select id="getAllCoffee" resultType="com.bg.mb.Coffee">
+		select * from coffee2
+	</select>
+	
+	<insert id="regCoffee" parameterType="com.bg.mb.Coffee">
+		insert into coffee2 values (#{c_name}, #{c_price})
+	</insert>
+
+</mapper>

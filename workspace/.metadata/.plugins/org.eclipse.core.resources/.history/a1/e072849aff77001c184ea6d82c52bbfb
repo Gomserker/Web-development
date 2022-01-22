@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+//Bad Maintenance Example
+
+public class BMain {
+	public static void main(String[] args) {
+		
+		//물건 구매후 포인트 적립
+		//구매 가격: 1000
+		//적립 포인트: 100
+		//적립율: 10%
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("구매가격: ");
+		int price = input.nextInt();
+		
+		System.out.printf("적립포인트: %.1f점", price * 0.1);
+		
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"visibility": 10000,
+	"timezone": 32400,
+	"main": {
+		"temp": 4.01,
+		"temp_min": 1.81,
+		"grnd_level": 1016,
+		"humidity": 48,
+		"pressure": 1018,
+		"sea_level": 1018,
+		"feels_like": -0.93,
+		"temp_max": 6.83
+	},
+	"clouds": {
+		"all": 11
+	},
+	"sys": {
+		"country": "JP",
+		"sunrise": 1642629797,
+		"sunset": 1642666442,
+		"id": 20513,
+		"type": 2
+	},
+	"dt": 1642644339,
+	"coord": {
+		"lon": 135.5022,
+		"lat": 34.6937
+	},
+	"weather": [
+		{
+			"icon": "02d",
+			"description": "few clouds",
+			"main": "Clouds",
+			"id": 801
+		}
+	],
+	"name": "Osaka",
+	"cod": 200,
+	"id": 1853909,
+	"base": "stations",
+	"wind": {
+		"deg": 339,
+		"speed": 7.47,
+		"gust": 12.67
+	}
+}

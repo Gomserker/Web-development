@@ -1,0 +1,9 @@
+
+public class MMain {
+	public static void main(String[] args) {
+		
+		DBManager_new.connect();
+		
+		
+	}
+}

@@ -1,0 +1,20 @@
+package com.bg.mb;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class DAO {
+
+	public static void getAllProduct() {
+		
+		try {
+			SqlSession ss = DBManager_new.connect();
+			
+			List<Product> products = ss.selectList("bgqqq.getAllProduct");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

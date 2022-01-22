@@ -1,0 +1,18 @@
+package com.bg.mb;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class MMain2 {
+	public static void main(String[] args) {
+		
+		//콘솔에 db 정보 전부 출력
+		
+		try {
+			SqlSession ss = DBManager_new.connect();
+			
+			ss.selectList("bgqqq.getAllWeather");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

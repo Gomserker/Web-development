@@ -1,0 +1,7 @@
+package com.bg.mb;
+
+public class SelectMain2 {
+	public static void main(String[] args) {
+		//이름으로 검색
+	}
+}

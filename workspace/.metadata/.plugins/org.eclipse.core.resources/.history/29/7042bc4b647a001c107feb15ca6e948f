@@ -1,0 +1,35 @@
+package com.bg.mb;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class DAO {
+
+	public static void getAllProduct(HttpServletRequest request) {
+
+		try {
+			SqlSession ss = DBManager_new.connect();
+			request.setAttribute("products", ss.selectList("bgqqq.getAllProduct"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void doSearch(HttpServletRequest request) {
+		
+		try {
+			SqlSession ss = DBManager_new.connect();
+			
+			String name = request.getParameter("name");
+			Product p = new Product();
+			p.setP_name(name);
+			request.setAttribute("searchProducts", ss.selectList("bgqqq.searchProduct", p));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

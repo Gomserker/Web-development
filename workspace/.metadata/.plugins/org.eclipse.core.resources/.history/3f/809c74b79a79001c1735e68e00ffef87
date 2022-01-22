@@ -1,0 +1,63 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import org.apache.ibatis.session.SqlSession;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class MMain {
+	public static void main(String[] args) {
+		
+		try {
+//			SqlSession ss = DBManager_new.connect();
+			
+			HttpsURLConnection huc = null;
+			Scanner k = new Scanner(System.in);
+			
+			System.out.print("city: ");
+			String str = k.next();
+			
+			//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+			//e7b1a57cd2158c8d195bfb24b7597bad
+			
+			String url = "https://api.openweathermap.org/data/2.5/weather?q=" + str + "&units=metric&appid=e7b1a57cd2158c8d195bfb24b7597bad";
+			URL u = new URL(url);
+			huc = (HttpsURLConnection) u.openConnection();
+			
+			InputStream is = huc.getInputStream();
+			InputStreamReader isr = new InputStreamReader(is, "utf-8");
+			
+			//json parsing need json parser
+			
+			JSONParser jp = new JSONParser();
+			
+			//만든 객체로 isr 넣어서 파싱 준비
+			
+			JSONObject weatherData = (JSONObject) jp.parse(isr);
+			System.out.println(weatherData);
+			
+			//원하는 데이터 추출
+			
+			//온도
+			JSONObject main = (JSONObject) weatherData.get("main");
+			System.out.println("현재온도 : " + main.get("temp"));
+			//국가
+			JSONObject sys = (JSONObject) weatherData.get("sys");
+			System.out.println("국가 : " + sys.get("country"));
+			//도시
+			System.out.println("도시 : " + str);
+			//설명
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+}
